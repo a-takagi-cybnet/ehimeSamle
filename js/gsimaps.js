@@ -26662,7 +26662,7 @@ GSI.SakuzuList = L.Evented.extend({
       );
       
       var layer = new GSI.KML(null, { async: true, geodesic: true });
-      ayer._kmlText = text;
+      ayer._kmlText = xhr.responseText;
       layer._addKML(xmlDoc, {});
 
       this._list.push(new GSI.SakuzuListItem(this, null, GSI.TEXT.SAKUZU.SAKUZUTITLE, '', layer, true));
