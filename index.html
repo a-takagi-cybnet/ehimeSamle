@@ -154,19 +154,6 @@ var sampleLayer = L.geoJson(sampledata, {
   }
 });
 
-
-// 背景地図設定
-var std = GSI.BaseLayer;
-
-// 中心位置設定
-var map = L.map('map', {
-  center: [33.674640,132.905731], zoom: 10, layers: [std,sampleLayer]
-});
-
-L.control.scale({imperial: false}).addTo(map);
-var baseLayers = {"地理院タイル（標準地図）": std};
-var overlays = {'サンプル': sampleLayer };
-L.control.layers(baseLayers, overlays,{position:'topright',collapsed:false}).addTo(map);
 </script>
 
   <div class="gsi_footer gsi_footer_template">
