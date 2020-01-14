@@ -26653,39 +26653,19 @@ GSI.SakuzuList = L.Evented.extend({
     }
     else {
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', './layers_txt/bousaitameike191008.geojson', false);
+      xhr.open('GET', './layers_txt/tameike.kml', false);
       xhr.send(null);
-      var sampledata = JSON.parse(xhr.responseText);
+      
+      xmlDoc = new DOMParser().parseFromString(
+        xhr.responseText,
+        "application/xml"
+      );
+      
+      var layer = new GSI.KML(null, { async: true, geodesic: true });
+      ayer._kmlText = text;
+      layer._addKML(xmlDoc, {});
 
-      var sampleLayer = L.geoJson(sampledata, {
-        pointToLayer: function (feature, latlng) {
-          var s = geojson_style(feature.properties);
-          if(feature.properties['_markerType']=='Icon'){
-            var myIcon = L.icon(s);
-            return L.marker(latlng, {icon: myIcon});
-          }
-          if(feature.properties['_markerType']=='DivIcon'){
-            var myIcon = L.divIcon(s);
-            return L.marker(latlng, {icon: myIcon});
-          }
-          if(feature.properties['_markerType']=='Circle'){
-            return L.circle(latlng,feature.properties['_radius'],s);
-          }
-          if(feature.properties['_markerType']=='CircleMarker'){
-            return L.circleMarker(latlng,s);
-          }
-        },
-        style: function (feature) {
-          if(!feature.properties['_markerType']){
-            var s = geojson_style(feature.properties);
-            return s;
-          }
-        },
-        onEachFeature: function (feature, layer) {
-          layer.bindPopup(popup_properties(feature.properties));
-        }
-      });
-      this._list.push(new GSI.SakuzuListItem(this, null, GSI.TEXT.SAKUZU.SAKUZUTITLE, '', sampleLayer, true));
+      this._list.push(new GSI.SakuzuListItem(this, null, GSI.TEXT.SAKUZU.SAKUZUTITLE, '', layer, true));
     }
   },
   getSakuzuItem: function () {
