@@ -26653,7 +26653,7 @@ GSI.SakuzuList = L.Evented.extend({
     }
     else {
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', './layers_txt/tameike.kml', false);
+      xhr.open('GET', '../layers_txt/tameike.kml', false);
       xhr.send(null);
       
       xmlDoc = new DOMParser().parseFromString(
@@ -26662,7 +26662,7 @@ GSI.SakuzuList = L.Evented.extend({
       );
       
       var layer = new GSI.KML(null, { async: true, geodesic: true });
-      ayer._kmlText = xhr.responseText;
+      layer._kmlText = xhr.responseText;
       layer._addKML(xmlDoc, {});
 
       this._list.push(new GSI.SakuzuListItem(this, null, GSI.TEXT.SAKUZU.SAKUZUTITLE, '', layer, true));
