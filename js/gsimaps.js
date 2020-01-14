@@ -26685,7 +26685,7 @@ GSI.SakuzuList = L.Evented.extend({
           layer.bindPopup(popup_properties(feature.properties));
         }
       });
-      this._list.push(new GSI.SakuzuListItem(this, null, GSI.TEXT.SAKUZU.SAKUZUTITLE, sampleLayer, true, true));
+      this._list.push(new GSI.SakuzuListItem(this, null, GSI.TEXT.SAKUZU.SAKUZUTITLE, '', sampleLayer, true));
     }
   },
   getSakuzuItem: function () {
