@@ -26653,7 +26653,7 @@ GSI.SakuzuList = L.Evented.extend({
     }
     else {
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', '../layers_txt/tameike.kml', false);
+      xhr.open('GET', './layers_txt/tameike.kml', false);
       xhr.send(null);
       
       xmlDoc = new DOMParser().parseFromString(
