@@ -106,6 +106,9 @@ CONFIG.layers = [
   },
   {
     "url": './layers_txt/layers_experimental.txt'
+  },
+  {
+    "url": './layers_txt/layers6.txt'
   }
 ];
 */
