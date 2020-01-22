@@ -19,7 +19,6 @@
      * The values can be less than 0 or greater than 1. It will sync points out of the map.
      */
     L.Sync.offsetHelper = function (ratioRef, ratioTarget) {
-        debugger;
         var or = L.Util.isArray(ratioRef) ? ratioRef : [0.5, 0.5];
         var ot = L.Util.isArray(ratioTarget) ? ratioTarget : [0.5, 0.5];
         return function (center, zoom, refMap, targetMap) {
@@ -35,7 +34,6 @@
 
     L.Map.include({
         sync: function (map, options) {
-            debugger;
             this._initSync();
             options = L.extend({
                 noInitialSync: false,
