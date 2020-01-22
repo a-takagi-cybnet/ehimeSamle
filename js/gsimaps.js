@@ -189,8 +189,8 @@ CONFIG.TOPMESSAGE = null;
 };*/
 
 // 初期位置
-CONFIG.DEFAULT = { CENTER: [36.104611, 140.084556], ZOOM: 5 };
-
+//CONFIG.DEFAULT = { CENTER: [36.104611, 140.084556], ZOOM: 5 };
+CONFIG.DEFAULT = { CENTER: [33.674640, 132.905731], ZOOM: 10};
 // レイヤータイプリスト
 CONFIG.LAYERTYPELIST = {
   "kml": { caption: "KML", isTile: false },
