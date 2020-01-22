@@ -34,7 +34,6 @@
 
 
     L.Map.include({
-    	debugger;
         sync: function (map, options) {
         	debugger;
             this._initSync();
