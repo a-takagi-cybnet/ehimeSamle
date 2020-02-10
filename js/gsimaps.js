@@ -570,7 +570,7 @@ CONFIG.FUNCMENU = {
               id: CONFIG.PARAMETERNAMES.UTMGRID,
               title: 'UTMグリッド',
               typeA: 'check',
-              defaultCheck: false
+              defaultCheck: true
             },
             {
               id: CONFIG.PARAMETERNAMES.TILEGRID,
@@ -582,7 +582,7 @@ CONFIG.FUNCMENU = {
               id: CONFIG.PARAMETERNAMES.CHIIKIMESH,
               title: '地域メッシュ',
               typeA: 'check',
-              defaultCheck: false
+              defaultCheck: true
             },
             {
               id: CONFIG.PARAMETERNAMES.T25000GRID,
@@ -595,7 +595,7 @@ CONFIG.FUNCMENU = {
               title: '国土基本図図郭',
               typeA: 'check',
               defaultCheck: true,
-              hidden : CONFIG.DISABLE_KOKUDOKIHONZUZUKAKU
+
             }
           ]
         },
@@ -8306,7 +8306,7 @@ GSI.ShareDialog = GSI.Dialog.extend({
     var skips = {};
     skips[CONFIG.PARAMETERNAMES.CLICKMOVE] = true;
     skips[CONFIG.PARAMETERNAMES.COCOTILE] = true;
-    //skips[CONFIG.PARAMETERNAMES.MINIMAP] = true;
+    skips[CONFIG.PARAMETERNAMES.MINIMAP] = true;
 
     var visibles = {};
     visibles[CONFIG.PARAMETERNAMES.CENTERCROSS] = this._centerCrossCheck.is(':checked');
@@ -11503,7 +11503,7 @@ GSI.HashOptions = L.Class.extend({
       var skips = {};
       skips[CONFIG.PARAMETERNAMES.CLICKMOVE] = true;
       skips[CONFIG.PARAMETERNAMES.COCOTILE] = true;
-      //skips[CONFIG.PARAMETERNAMES.MINIMAP] = true;
+      skips[CONFIG.PARAMETERNAMES.MINIMAP] = true;
 
       var visibles = {};
       visibles[CONFIG.PARAMETERNAMES.CENTERCROSS] = this._gsimaps._pageStateManager.getViewSettingVisible(CONFIG.PARAMETERNAMES.CENTERCROSS); // 表示設定：中心十字線        vs=c[0/1]
