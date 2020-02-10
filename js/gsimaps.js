@@ -46096,7 +46096,7 @@ GSI.GSIMaps = L.Evented.extend({
 
     // ミニマップ
     this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP] = { obj: new GSI.MiniMap(map, { visible: viewSetting.miniMap }), setter: 'setVisible', getter: 'getVisible' };
-    
+    var checkState = this.options.getCheckState(CONFIG.PARAMETERNAMES.MINIMAP.id, CONFIG.PARAMETERNAMES.MINIMAP.defaultCheck);
     this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['obj'][this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['setter']](true);
 
 
