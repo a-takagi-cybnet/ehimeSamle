@@ -21,9 +21,6 @@
 		"url":"./layers3.txt"
 	},
 	{
-		"url":"./layers4.txt"
-	},
-	{
 		"url":"./layers_skhb.txt"
 	},
 	{
