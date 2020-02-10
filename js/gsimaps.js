@@ -46097,7 +46097,7 @@ GSI.GSIMaps = L.Evented.extend({
     // ミニマップ
     this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP] = { obj: new GSI.MiniMap(map, { visible: viewSetting.miniMap }), setter: 'setVisible', getter: 'getVisible' };
     
-    this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['obj'][this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['setter']](true)
+    this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['obj'][this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['setter']](true);
 
 
     // クリックで移動
