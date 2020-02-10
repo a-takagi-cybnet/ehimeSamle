@@ -90,7 +90,7 @@ CONFIG.layers = [
     "url": './layers_txt/layers3.txt'
   },
   {
-    "url": './layers_txt/layers4.txt'
+    "url": './layers_txt/layers1.txt'
   },
   {
     "url": './layers_txt/layers_skhb.txt'
