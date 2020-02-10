@@ -84,9 +84,6 @@ CONFIG.layers = [
     "url": './layers_txt/layers_topic_new.txt'
   },
   {
-    "url": './layers_txt/layers1.txt'
-  },
-  {
     "url": './layers_txt/layers2.txt'
   },
   {
