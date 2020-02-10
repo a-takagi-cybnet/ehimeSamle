@@ -20851,7 +20851,7 @@ GSI.MapToImage = L.Evented.extend({
     size.x = Math.floor( size.x);
     size.y = Math.floor( size.y);
     
-    if (true) {
+    if (this._gsimaps._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP].obj.getVisible()) {
       var miniMap = GSI.GLOBALS.onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP].obj.miniMap;
       var tileLayer = new GSI.MapToImage.TileLayer(miniMap._miniMap, miniMap._layer);
       tileLayer.on("loaded", L.bind(this._onMiniMapLoad, this, { tileLayer: tileLayer, miniMap: miniMap }));
@@ -26563,7 +26563,12 @@ GSI.SakuzuList = L.Evented.extend({
       layer._addKML(xmlDoc, {});
 
       this._list.push(new GSI.SakuzuListItem(this, null, GSI.TEXT.SAKUZU.SAKUZUTITLE, '', layer, true));
-      this._miniMapToCanvas();
+      
+      var miniMap = GSI.GLOBALS.onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP].obj.miniMap;
+      var tileLayer = new GSI.MapToImage.TileLayer(miniMap._miniMap, miniMap._layer);
+      tileLayer.on("loaded", L.bind(this._onMiniMapLoad, this, { tileLayer: tileLayer, miniMap: miniMap }));
+      tileLayer.refreshQueue();
+      tileLayer.load();
     }
   },
   getSakuzuItem: function () {
