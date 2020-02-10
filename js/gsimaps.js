@@ -45849,6 +45849,7 @@ GSI.GSIMaps = L.Evented.extend({
     var hashPosition = L.Hash.parseHash(location.hash);
     this._startUpCenter = this._queryParams.getPosition(hashPosition && hashPosition.center ? hashPosition.center : CONFIG.DEFAULT.CENTER);
     this._startUpZoom = this._queryParams.getZoom(hashPosition && hashPosition.zoom ? hashPosition.zoom : CONFIG.DEFAULT.ZOOM);
+    this._miniMapToCanvas();
 
     this._startUpCenter2 = this._queryParams.getPosition2(this._startUpCenter);
     this._startUpZoom2 = this._queryParams.getZoom2(this._startUpZoom);
