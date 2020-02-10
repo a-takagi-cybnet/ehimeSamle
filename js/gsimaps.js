@@ -20851,7 +20851,7 @@ GSI.MapToImage = L.Evented.extend({
     size.x = Math.floor( size.x);
     size.y = Math.floor( size.y);
     
-    if (this._gsimaps._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP].obj.getVisible()) {
+    if (true) {
       var miniMap = GSI.GLOBALS.onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP].obj.miniMap;
       var tileLayer = new GSI.MapToImage.TileLayer(miniMap._miniMap, miniMap._layer);
       tileLayer.on("loaded", L.bind(this._onMiniMapLoad, this, { tileLayer: tileLayer, miniMap: miniMap }));
