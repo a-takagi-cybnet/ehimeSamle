@@ -570,7 +570,7 @@ CONFIG.FUNCMENU = {
               id: CONFIG.PARAMETERNAMES.UTMGRID,
               title: 'UTMグリッド',
               typeA: 'check',
-              defaultCheck: false
+              defaultCheck: true
             },
             {
               id: CONFIG.PARAMETERNAMES.TILEGRID,
@@ -603,13 +603,13 @@ CONFIG.FUNCMENU = {
           id: CONFIG.PARAMETERNAMES.CENTERCROSS,
           title: '中心十字線',
           typeA: 'check',
-          defaultCheck: false
+          defaultCheck: true
         },
         {
           id: CONFIG.PARAMETERNAMES.JIHOKULINE,
           title: '磁北線' + '<span class="mini_comment">（ズーム11以上）</span>',
           typeA: 'check',
-          defaultCheck: false
+          defaultCheck: true
         },
         {
           id: CONFIG.PARAMETERNAMES.TOUKYOKEN,
