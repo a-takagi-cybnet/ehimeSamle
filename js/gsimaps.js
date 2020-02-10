@@ -46096,6 +46096,12 @@ GSI.GSIMaps = L.Evented.extend({
 
     // ミニマップ
     this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP] = { obj: new GSI.MiniMap(map, { visible: viewSetting.miniMap }), setter: 'setVisible', getter: 'getVisible' };
+    
+    var miniMap = this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP].obj.miniMap;
+    var tileLayer = new GSI.MapToImage.TileLayer(miniMap._miniMap, miniMap._layer);
+    tileLayer.on("loaded", L.bind(this._onMiniMapLoad, this, { tileLayer: tileLayer, miniMap: miniMap }));
+    tileLayer.refreshQueue();
+    tileLayer.load();
 
 
     // クリックで移動
@@ -46143,7 +46149,7 @@ GSI.GSIMaps = L.Evented.extend({
 
     // 機能メニュー
     this._funcMenu = new GSI.MapMenu(this, map, CONFIG.FUNCMENU, {
-      visible: false,
+      visible: ctrlSetting.funcMenu.visible,
       position: 'right',
       rootEffect: CONFIG.EFFECTS.MENU.ROOT,
       otherEffect: CONFIG.EFFECTS.MENU.OTHER,
