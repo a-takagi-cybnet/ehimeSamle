@@ -603,7 +603,7 @@ CONFIG.FUNCMENU = {
           id: CONFIG.PARAMETERNAMES.CENTERCROSS,
           title: '中心十字線',
           typeA: 'check',
-          defaultCheck: true
+          defaultCheck: false
         },
         {
           id: CONFIG.PARAMETERNAMES.JIHOKULINE,
@@ -627,7 +627,7 @@ CONFIG.FUNCMENU = {
           id: CONFIG.PARAMETERNAMES.MINIMAP,
           title: '広域図',
           typeA: 'check',
-          defaultCheck: false
+          defaultCheck: true
         },
         {
           id: CONFIG.PARAMETERNAMES.CLICKMOVE,
@@ -22617,7 +22617,7 @@ GSI.SHARE.showTwitter = function () {
 
 GSI.SHARE.showFacebook = function () {
 
-  var url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href);
+  var url = 'https://www.facebook.com/sharer/sharer.php?';
 
   window.open(url);
 };
@@ -46244,6 +46244,12 @@ GSI.GSIMaps = L.Evented.extend({
     this._onoffObjects[CONFIG.PARAMETERNAMES.FOOTER] = { obj: this._footerManager, setter: 'setVisible', getter: 'getVisible' };
 
     // 機能メニュー
+    var arr  =
+    {
+       visible : false
+    }
+    //CONFIG.FUNCMENU.attr( { 'disabled' : 'disabled' } );
+    //CONFIG.FUNCMENU = {};
     this._funcMenu = new GSI.MapMenu(this, map, CONFIG.FUNCMENU, {
       visible: ctrlSetting.funcMenu.visible,
       position: 'right',
@@ -46542,7 +46548,6 @@ GSI.GSIMaps = L.Evented.extend({
 
     this._funcMenu.disableMenuItem('gps_end');
     this._funcMenu.disableMenuItem('gps_save');
-
 
     var dialogManager = this._mainMap._dialogManager;
     // 等距権
