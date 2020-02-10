@@ -46097,11 +46097,7 @@ GSI.GSIMaps = L.Evented.extend({
     // ミニマップ
     this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP] = { obj: new GSI.MiniMap(map, { visible: viewSetting.miniMap }), setter: 'setVisible', getter: 'getVisible' };
     
-    var miniMap = this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP].obj.miniMap;
-    var tileLayer = new GSI.MapToImage.TileLayer(miniMap._miniMap, miniMap._layer);
-    tileLayer.on("loaded", L.bind(this._onMiniMapLoad, this, { tileLayer: tileLayer, miniMap: miniMap }));
-    tileLayer.refreshQueue();
-    tileLayer.load();
+    this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['obj'][this._onoffObjects[CONFIG.PARAMETERNAMES.MINIMAP]['setter']](true)
 
 
     // クリックで移動
