@@ -608,12 +608,12 @@ CONFIG.FUNCMENU = {
           typeA: 'check',
           defaultCheck: false
         },
-        {
-          id: CONFIG.PARAMETERNAMES.TOUKYOKEN,
-          title: '等距圏',
-          typeA: 'check',
-          defaultCheck: false
-        },
+//        {
+//          id: CONFIG.PARAMETERNAMES.TOUKYOKEN,
+//          title: '等距圏',
+//          typeA: 'check',
+//          defaultCheck: false
+//        },
         {
           id: CONFIG.PARAMETERNAMES.HOUILINE,
           title: '方位線',
