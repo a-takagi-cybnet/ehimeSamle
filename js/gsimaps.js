@@ -588,7 +588,7 @@ CONFIG.FUNCMENU = {
               id: CONFIG.PARAMETERNAMES.T25000GRID,
               title: '2万5千分1地形図郭',
               typeA: 'check',
-              defaultCheck: false
+              defaultCheck: true
             },
             {
               id: CONFIG.PARAMETERNAMES.KOKUDOKIHONZUKAKU,
@@ -609,7 +609,7 @@ CONFIG.FUNCMENU = {
           id: CONFIG.PARAMETERNAMES.JIHOKULINE,
           title: '磁北線' + '<span class="mini_comment">（ズーム11以上）</span>',
           typeA: 'check',
-          defaultCheck: true
+          defaultCheck: false
         },
         {
           id: CONFIG.PARAMETERNAMES.TOUKYOKEN,
