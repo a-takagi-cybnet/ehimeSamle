@@ -585,7 +585,7 @@ CONFIG.FUNCMENU = {
               id: CONFIG.PARAMETERNAMES.T25000GRID,
               title: '2万5千分1地形図郭',
               typeA: 'check',
-              defaultCheck: false
+              defaultCheck: true
             },
             {
               id: CONFIG.PARAMETERNAMES.KOKUDOKIHONZUKAKU,
@@ -7972,7 +7972,7 @@ GSI.ShareDialog = GSI.Dialog.extend({
     if ( !CONFIG.DISABLE_KOKUDOKIHONZUZUKAKU ) this._setCheckdState(this._kokudokihonzukakuCheck, false);
     this._setCheckdState(this._tileGridCheck, false);
     this._setCheckdState(this._chiikiMeshCheck, false);
-    this._setCheckdState(this._t25000Check, false);
+    this._setCheckdState(this._t25000Check, true);
     this._setCheckdState(this._jihokuLineCheck, false);
   },
   _initializeLinkMode: function () {
